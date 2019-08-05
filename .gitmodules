@@ -1,0 +1,3 @@
+[submodule "FuzzyCLIPS631"]
+	path = FuzzyCLIPS631
+	url = https://github.com/garydriley/FuzzyCLIPS631

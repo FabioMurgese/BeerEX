@@ -44,10 +44,7 @@
 
 (deftemplate attribute
    (slot name)
-   (slot value)
-   (slot certainty
-      (range -1.0 1.0)
-      (default 1.0)))
+   (slot value))
 
 (deftemplate beer
    (slot style
@@ -92,14 +89,6 @@
 
 (deffunction sort-certainties (?attribute1 ?attribute2)
    (< (fact-slot-value ?attribute1 certainty) (fact-slot-value ?attribute2 certainty)))
-
-(deffunction combine-CFs (?x ?y)
-   (if (and (> ?x 0) (> ?y 0))
-    then (bind ?c (- (+ ?x ?y) (* ?x ?y)))
-    else (if (and (< ?x 0) (< ?y 0))
-          then (bind ?c (+ (+ ?x ?y) (* ?x ?y)))
-          else (bind ?c (/ (+ ?x ?y ) (- 1 (min (abs ?x) (abs ?y)))))))
-   ?c)
 
 (deffunction get-explanation ()
    (bind ?explanation (format nil "%s %n%n" "*... for the following reasons:*"))
@@ -148,14 +137,6 @@
 ;;********************************
 ;;* BEER SELECTION & PRINT RULES *
 ;;********************************
-
-(defrule combine-certainties
-   ?f1 <- (attribute (name ?name) (value ?value) (certainty ?certainty1))
-   ?f2 <- (attribute (name ?name) (value ?value) (certainty ?certainty2))
-   (test (neq ?f1 ?f2))
-   =>
-   (retract ?f1)
-   (modify ?f2 (certainty (combine-CFs ?certainty1 ?certainty2))))
 
 (defrule generate-beers
    (declare (salience ?*medium-low-priority*))
