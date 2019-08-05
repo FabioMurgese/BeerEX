@@ -81,7 +81,7 @@
 
 (defrule load-beer-styles-list
    =>
-   (load-facts clips/beer-styles.fct))
+   (load-facts clipsrc/beer-styles.fct))
 
 ;;****************
 ;;* DEFFUNCTIONS *
