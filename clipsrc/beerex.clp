@@ -4,7 +4,7 @@
 ;;;
 ;;;   This expert system suggests a beer to drink according to taste and meal.
 ;;;
-;;;   CLIPS 6.31
+;;;   CLIPS 6.30
 ;;;
 ;;;   Author: Donato Meoli
 ;;;===========================================================================
@@ -55,19 +55,19 @@
    (slot name
       (type STRING))
    (multislot alcohol
-      (type SYMBOL)
+      (type FUZZY-VALUE fz-alcohol)
       (allowed-symbols not-detectable mild noticeable harsh))
    (multislot color
-      (type SYMBOL)
+      (type FUZZY-VALUE fz-color)
       (allowed-symbols pale amber brown dark))
    (multislot flavor
       (type SYMBOL)
       (allowed-symbols crisp-clean malty-sweet dark-roasty hoppy-bitter fruity-spicy sour-tart-funky))
    (multislot fermentation
-      (type SYMBOL)
+      (type FUZZY-VALUE fz-fermentation)
       (allowed-symbols top bottom wild))
    (multislot carbonation
-      (type SYMBOL)
+      (type FUZZY-VALUE fz-carbonation)
       (allowed-symbols low medium high))
    (slot link
       (type STRING)))

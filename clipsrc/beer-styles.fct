@@ -3,19 +3,29 @@
 ;;* FUZZY VARIABLES *
 ;;*******************
 
-(deftemplate alcohol
+(deftemplate fz-alcohol
     3 14 abv
     ((not-detectable () ())
      (mild () ())
      (noticeable () ())
      (harsh () ())))
 
-(deftemplate color
+(deftemplate fz-color
     2 50 srm
     ((pale () ())
      (amber () ())
      (brown () ())
      (dark () ())))
+
+(deftemplate fz-fermentation
+    ())
+
+(deftemplate fz-carbonation
+    ())
+
+(deftemplate fz-bitterness
+    0 100 ibu
+    ())
 
 ;;********************
 ;;* BEER STYLES LIST *
