@@ -4,7 +4,7 @@
 ;;;
 ;;;   This expert system suggests a beer to drink according to taste and meal.
 ;;;
-;;;   CLIPS 6.31
+;;;   Fuzzy CLIPS 6.31
 ;;;
 ;;;   Author: Donato Meoli
 ;;;===========================================================================
